@@ -6,8 +6,13 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
+  - ruby 2.4.0
+  - rails 5.2.3
 
 * System dependencies
+  - getbootstrap: https://getbootstrap.com/docs/4.3/getting-started/introduction/
+  - Navbar component: https://getbootstrap.com/docs/4.3/components/navbar/#nav
+  - 
 
 * Configuration
 

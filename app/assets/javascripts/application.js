@@ -14,3 +14,10 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+  // $("#myButton").click(function() {
+  //   // console.log('click');
+  //   $('#questionModal').modal({show:true});
+  // });
+});
