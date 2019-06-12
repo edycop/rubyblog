@@ -1,2 +1,20 @@
-<h1>Wellcome to training rails project</h1>
-<p>This is just for educational purpose</p>
+<div class='well'>
+  <h4>Question list</h4>
+</div>
+<div class="container">
+  <% @questions.each do |q| %>
+  <div class="media">
+    <div class='media-left'>
+      <img src="<%= q.gravatar %>" class="mr-3" alt="gravatar">
+    </div>
+    <div class="media-body">
+      <h5 class="mt-0"><%= q.email %> asked:</h5>
+        <div><%= time_ago_in_words q.created_at %> ago</div>
+        <%= q.body %>
+      <div>
+        <a href="<%= question_path(q) %>" class="btn btn-success btn-sx">View answer</a>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
