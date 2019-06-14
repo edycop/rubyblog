@@ -1,0 +1,20 @@
+%nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  .container
+    %a.navbar-brand{:href => "/"} Container
+    %button.navbar-toggler{"aria-controls" => "navbarsExample07", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarsExample07", "data-toggle" => "collapse", :type => "button"}
+      %span.navbar-toggler-icon
+    #navbarsExample07.collapse.navbar-collapse
+      %ul.navbar-nav.mr-auto
+        %li.nav-item.active
+          %a.nav-link{:href => "/"}
+            Home
+            %span.sr-only (current)
+        %li.nav-item
+          %a.nav-link{:href => "/about"} About
+        %li.nav-item
+          %a.nav-link.disabled{:href => "#"} --
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          .navbar-text= current_user_email || 'No user yet'
+        %li
+          %button.btn.btn-outline-success.my-2.my-sm-0{"data-target" => "#questionModal", "data-toggle" => "modal"} Ask Question

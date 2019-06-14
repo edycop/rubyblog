@@ -51,6 +51,33 @@ Things you may want to cover:
   -
 
 * Deployment instructions
+  - Asset Pipeline: https://edgeguides.rubyonrails.org/asset_pipeline.html
+    - rails in production:
+      - rails server -e production
+    - review logs file: tail -f log/production.log
+    - generate secret key: rake -T secret
+    - secret key generated at ./tmp/development_secret.txt
+    - export secret key base and re-run production server: export SECRET_KEY_BASE=key_copyied
+    - copy development database to production folder: cp db/development.sqlite3 db/production.sqlite3
+    - export variable to serve static files: export RAILS_SERVE_STATIC_FILES=true
+    - compile and combine javascript and css files to minimize size:  rake assets:precompile
+    - re-run production server
+    - To minify .js and .css files: RAILS_ENV=production rake assets:precompile
+    - re-run production server
+  - Heroku: https://heroku.com/
+    - Heroku command line client for ruby: https://www.heroku.com/ruby
+    - Heroku client login: heroku login (in terminal)
+    - Create heroku app: heroku create (in RoR project)
+    - Check remote repository: git remote -v (must to show a git.heroku.com repository)
+    - Go to Gemfile and add gem for postgresql database:
+        group :production do
+          # Use postgres database
+          gem 'pg'
+          gem 'rails_12factor'
+        end
+    - Run bundle to install gem and dependences
+    - 
+
 
 * Jquery tips:
   - Execute button trigger by jquery int this case show modal window:
@@ -102,4 +129,10 @@ Things you may want to cover:
             }
         }
       }
-  -
+
+* CoffeeScript:
+  - https://coffeescript.org/#introduction
+
+* Small screens:
+  - Use hidden-xs bootstrap attribute
+  - Use bootstrap viewport "meta tag"

@@ -13,6 +13,7 @@
       background-color: #eee;
       margin-bottom: 1px;
       position: relative; // relative to his children
+      height: 8em; //fixed height for this component
       .time {
           position: absolute; //absolute to his father component
           top: 8px;

@@ -1,0 +1,4 @@
+es:
+    main_mailer:
+      notify_question_author:
+        subject: "Nueva respuesta a su pregunta"

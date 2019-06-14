@@ -1,0 +1,29 @@
+.container
+  .lead.well
+    .media
+      .media-left
+        %img.mr-3{:alt => "question mark", :src => "#{@question.gravatar}"}/
+      .media-body
+        %h5.mt-0
+          = @question.email
+          asked:
+        = @question.body
+  .row
+    .col-sm-8.col-sm-offset-2
+      %div
+        %button.btn.btn-success.btn-sm{"data-target" => "#answerModal", "data-toggle" => "modal"} Submit new answer
+      = render 'home/new_answer_form'
+      - @answers.each do |answer|
+        .media
+          .media-left
+            %img.mr-3{:alt => "question mark", :src => "#{answer.gravatar}"}/
+          .media-body
+            %h5.mt-0
+              = answer.email
+              answered:
+            %div
+              = time_ago_in_words answer.created_at
+              ago
+            = answer.body
+      - if @answers.empty?
+        .alert.alert-info Nothing here yet, be the first to answer.
