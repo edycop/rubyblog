@@ -76,8 +76,30 @@ Things you may want to cover:
           gem 'rails_12factor'
         end
     - Run bundle to install gem and dependences
-    - 
-
+    - Add all changes to your heroku repository:
+      - git add .
+      - git commit -am "gem postgres"
+      - git push heroku master
+      - command above generate app on a specific url (heroku dynamic url), example: https://thawing-hollows-94023.herokuapp.com/
+      - heroku run rake db:migrate (migrate database)
+      - check heroku logs for feedback: heroku logs --tail
+      - heroku open (to open a web browser and explorer the new site)
+      - Other heroku commands:
+        - heroku apps (list heroku apps)
+        - heroku apps:info
+        - heroku apps:info --app <app name>
+        - heroku domains
+        - heroku ps -a <app name>
+        - heroku whoami
+        - heroku ps: process and workers (https://medium.com/@khandelwal12nidhi/heroku-what-is-dynos-workers-and-scaling-e1a92bcc2cf1)
+        - heroku releases
+        - heroku config
+        - heroku config:set TEST=1
+        - heroku run rails console (rails console on heroku)
+        - heroku pg:psql (postgresql console on heroku)
+        - heroku pg:info
+        -
+    -
 
 * Jquery tips:
   - Execute button trigger by jquery int this case show modal window:
@@ -136,3 +158,11 @@ Things you may want to cover:
 * Small screens:
   - Use hidden-xs bootstrap attribute
   - Use bootstrap viewport "meta tag"
+
+* How to update a project:
+  - bundle update (update all libraries and dependencies)
+  - In Gemfile:
+    - \~> means any version compatible library:
+      - gem 'rails', '~> 5.2.3'
+      - gem 'rails', gihub: 'rails/rails'
+    -
